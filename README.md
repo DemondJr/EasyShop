@@ -71,5 +71,5 @@ List resources such as tutorials, articles, or documentation that helped you dur
 -Demond Jackson Jr.
 
 ## Thanks
-- Amoni, Anthony and Shelby for being my biggest supporters and helping me out.
+- Amoni, Anthony, Anita and Shelby for being my biggest supporters and helping me out.
 - I also want to thank Raymond for being patient with me and never stopped believi
