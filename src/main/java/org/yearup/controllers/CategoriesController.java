@@ -40,6 +40,7 @@ public class CategoriesController {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops... our bad.");
         }
     }
+
     @GetMapping("{id}") // add the appropriate annotation for a get action
     public Category getById(@PathVariable int id) {
         Category category = null;
@@ -58,8 +59,7 @@ public class CategoriesController {
     // the url to return all products in category 1 would look like this
     // https://localhost:8080/categories/1/products
     @GetMapping("{categoryId}/products")
-    public List<Product> getProductsById(@PathVariable int categoryId)
-    {
+    public List<Product> getProductsById(@PathVariable int categoryId) {
         // get a list of product by categoryId
         try {
             var category = categoryDao.getById(categoryId);
@@ -67,8 +67,7 @@ public class CategoriesController {
             if (category == null)
                 throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Category not found.");
             return productDao.search(categoryId, null, null, null);
-        }
-        catch(Exception ex){
+        } catch (Exception ex) {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Something went wrong. Please try again");
         }
     }
@@ -84,7 +83,7 @@ public class CategoriesController {
         }
     }
 
-    @PutMapping( "/{id}")
+    @PutMapping("/{id}")
     // add annotation to call this method for a PUT (update) action - the url path must include the categoryId
     @PreAuthorize("hasRole('ROLE_ADMIN')") // add annotation to ensure that only an ADMIN can call this function
     public void updateCategory(@PathVariable int id, @RequestBody Category category) {
@@ -96,6 +95,7 @@ public class CategoriesController {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "update category error");
         }
     }
+
     // update the category by id
     @DeleteMapping("{id}")
     // add annotation to call this method for a DELETE action - the url path must include the categoryId
@@ -113,3 +113,4 @@ public class CategoriesController {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+}
