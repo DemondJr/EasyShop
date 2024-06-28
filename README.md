@@ -31,6 +31,8 @@ Follow these steps to get your application running within IntelliJ IDEA:
 3. After the project opens, wait for IntelliJ to index the files and set up the project.
 4. Find the main class with the `public static void main(String[] args)` method.
 5. Right-click on the file and select 'Run 'YourMainClassName.main()'' to start the application.
+
+### Once you run your project in IntelliJ you must:
 6. Open SQL and hit the lighting bolt to refresh your application.
 7. Once that happens go to Postman and hit run. Make sure all your request are able to run through.
 8. Open web application on intellij and click the browser to open website and begin to shop! 
