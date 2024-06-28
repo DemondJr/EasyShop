@@ -30,9 +30,10 @@ public class CategoriesController {
         this.productDao = productDao;
     }
 
-    @GetMapping() // add the appropriate annotation for a get action
+    @GetMapping("")
+    @PreAuthorize("permitAll()")// add the appropriate annotation for a get action
     // find and return all categories
-    public List<Category> getAll() {
+    public List<Category> getAllCategories() {
         try {
 
             return categoryDao.getAllCategories();
